@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -34,24 +36,6 @@
 
 <body>
 
-<ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="47" viewBox="0 0 100 56">
-            <title>
-                AFRY logotype
-            </title>
-            <g fill="none" fill-rule="evenodd">
-                <g>
-                    <path fill="#000" d="M49.077 10.332C39.114-1.3 21.535-2.714 9.815 7.172-1.906 17.06-3.332 34.502 6.63 46.134c9.963 11.63 27.54 13.046 39.262 3.158 11.721-9.885 13.146-27.328 3.184-38.96M11.57 9.224c9.563-8.066 23.5-7.781 32.714.124l-40.3 11.07a24.787 24.787 0 017.586-11.194M8.698 44.391c-4.694-5.481-6.58-12.408-5.803-19.045l13.562 6.875 2.192-1.854L4.906 23.39l.057-.448 39.067-10.73.304.355L19.313 33.67l7.39 19.471c-6.725-.309-13.311-3.272-18.005-8.75m20.276 7.096l-6.45-16.992L46.09 14.617l.304.356-16.967 36.531-.454-.016m15.162-4.246a25.066 25.066 0 01-12.354 5.626l17.502-37.685c6.377 10.299 4.415 23.993-5.148 32.059"></path>
-                </g>
-            </g>
-        </svg>
-        <a href="#!name"><span class="name">Dejen Sharew</span></a>
-        <a href="#!email"><span class="email">dejen.sharew@afry.com</span></a>
-    </div></li>
-    <li><a href="welcome.html"><i class="material-icons">home</i>Home</a></li>
-</ul>
-<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 <!-- Compiled and minified JavaScript -->
 
 
@@ -69,40 +53,40 @@
                 <div class="row day valign-wrapper center-align">
                     <div class="col s4">Monday</div>
                     <div class="input-field inline col s8" style="margin:none;">
-                        <input placeholder="day" id="Monday" value="8" type="text" class="validate inline center-align">
+                        <input placeholder="hours" id="Monday" value="8" type="text" class="validate inline center-align">
                     </div>
                 </div>
 
                 <div class="row day valign-wrapper center-align">
                     <div class="col s4">Tuesday</div>
                     <div class="input-field inline col s8" style="margin:none;">
-                        <input placeholder="day" id="Tuesday" value="8" type="text" class="validate inline center-align">
+                        <input placeholder="hours" id="Tuesday" value="8" type="text" class="validate inline center-align">
                     </div>
                 </div>
 
                 <div class="row day valign-wrapper center-align">
                     <div class="col s4">Wednesday</div>
                     <div class="input-field inline col s8" style="margin:none;">
-                        <input placeholder="day" id="Wednesday" value="8" type="text" class="validate inline center-align">
+                        <input placeholder="hours" id="Wednesday" value="8" type="text" class="validate inline center-align">
                     </div>
                 </div>
 
                 <div class="row day valign-wrapper center-align">
                     <div class="col s4">Thursday</div>
                     <div class="input-field inline col s8" style="margin:none;">
-                        <input placeholder="day" id="Thursday" value="8" type="text" class="validate inline center-align">
+                        <input placeholder="hours" id="Thursday" value="8" type="text" class="validate inline center-align">
                     </div>
                 </div>
 
                 <div class="row day valign-wrapper center-align">
                     <div class="col s4">Friday</div>
                     <div class="input-field inline col s8" style="margin:none;">
-                        <input placeholder="day" id="Friday" value="8" type="text" class="validate inline center-align">
+                        <input placeholder="hours" id="Friday" value="8" type="text" class="validate inline center-align">
                     </div>
                 </div>
 
                 <div class="input-field col s12 center-align">
-                    <a class="btn btn-large waves-effect waves-light center-align" type="submit" name="action" href="scoring.html">
+                    <a id = "confirm" class="btn btn-large waves-effect waves-light center-align" type="submit" name="action" href="scoring.html">
                         Confirm
                     </a>
                     <br/>
@@ -119,18 +103,45 @@
 </div>
 
 <script style="text/script">
-        var elem = document.querySelector('.sidenav');
-      var instance = new M.Sidenav(elem);
 
-      // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-      // var collapsibleElem = document.querySelector('.collapsible');
-      // var collapsibleInstance = new M.Collapsible(collapsibleElem, options);
+     $("#confirm").click(function(){
 
-      // Or with jQuery
 
-      $(document).ready(function(){
-        $('.sidenav').sidenav();
-      });
+        var data = [
+            {date: '2021-05-31', hours: $("#Monday").val()},
+            {date: '2021-06-01', hours: $("#Tuesday").val()},
+            {date: '2021-06-02', hours: $("#Wednesday").val()},
+            {date: '2021-06-03', hours: $("#Thursday").val()},
+            {date: '2021-06-04', hours: $("#Friday").val()},
+        ]
+
+        console.log(JSON.stringify(data));
+
+        request = $.ajax({
+            url: "http://localhost:3000/report",
+            type: "post",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8"
+        });
+
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            // Log a message to the console
+            console.log("Hooray, it worked!");
+            location.href="scoring.html"
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+
+        return false;
+     })
 
 </script>
 <!--JavaScript at end of body for optimized loading-->
