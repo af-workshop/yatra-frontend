@@ -1,0 +1,23 @@
+{
+  "name": "yatra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass sass/materialize.scss css/materialize.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/af-workshop/yatra-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/af-workshop/yatra-frontend/issues"
+  },
+  "homepage": "https://github.com/af-workshop/yatra-frontend#readme",
+  "dependencies": {
+    "sass": "^1.34.1"
+  }
+}
