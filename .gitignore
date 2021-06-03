@@ -1,1 +1,16 @@
-node_modules
+.idea/
+.sonic/
+target/
+*.iml
+*.class
+native-libs/
+.yo-rc.json
+
+.vscode
+.settings
+.project
+.classpath
+.factorypath
+.gitsecret/keys/random_seed
+!*.secret
+secrets/vwdpeu/iot/secrets.txt
