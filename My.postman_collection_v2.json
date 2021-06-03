@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0e6d6e29-f743-488b-b140-fb7dce968ac5",
+		"name": "My",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Timereport",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "XSRF-TOKEN=0PMF-77D7-AM2J-JR0U-LEWR-069B-VVLQ-UD6V; IFSSESSIONID48080=axrRf87p5jpDJFq0vbs8_dqmEmRXD9ljFXfM24M5-jqIlK1DqzFW!-1231247630; _WL_AUTHCOOKIE_IFSSESSIONID48080=DOMgQ9l.Ac4bTGEmN-zi",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "0PMF-77D7-AM2J-JR0U-LEWR-069B-VVLQ-UD6V",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata.metadata=full;IEEE754Compatible=true",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;IEEE754Compatible=true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"SourcePage\":\"TIME_REGISTRATION_JOB\",\"AttInterval\":false,\"AttResult\":false,\"AttAbsence\":false,\"AttLunchBreak\":false,\"AttChangeIntervals\":false,\"AttInOutOrg\":false,\"AttGrossInterval\":false,\"AttManresult\":false,\"AttIndirectClock\":false,\"AttShopClock\":false,\"AttIndirect\":false,\"AttShpord\":false,\"AttWo\":false,\"AttPrjrep\":true,\"CompanyId\":\"600\",\"EmpNo\":\"492614\",\"AccountDateDate\":\"2021-05-31\",\"AccountDateTime\":\"2021-06-04T08:00:00Z\",\"WageClass\":\"WC1\",\"InTime\":\"2021-06-04T08:00:00Z\",\"OutTime\":null,\"InPersClass\":\"Normal\",\"OutPersClass\":null,\"InRegType\":\"Manually\",\"OutRegType\":\"Manually\",\"AbsenceInTime\":\"2021-06-04T08:00:00Z\",\"AbsenceOutTime\":null,\"AbsenceWageCode\":\"\",\"BreakInTime\":\"2021-06-04T12:00:00Z\",\"BreakOutTime\":\"2021-06-04T13:00:00Z\",\"BreakType\":\"Lunch\",\"WageGrp\":null,\"WageCode\":null,\"ManRsltWageCode\":null,\"ManRsltWageGrp\":null,\"OrgCode\":\"600-0091\",\"Objid1\":null,\"Objid2\":null,\"Objid3\":null,\"Objid4\":null,\"Objid5\":null,\"DayIn1\":null,\"DayIn2\":null,\"DayIn3\":null,\"DayIn4\":null,\"DayIn5\":null,\"DayInType1\":null,\"DayInType2\":null,\"DayInType3\":null,\"DayInType4\":null,\"DayInType5\":null,\"DayOut1\":null,\"DayOut2\":null,\"DayOut3\":null,\"DayOut4\":null,\"DayOut5\":null,\"DayOutType1\":null,\"DayOutType2\":null,\"DayOutType3\":null,\"DayOutType4\":null,\"DayOutType5\":null,\"WageGrpRsltUpd1\":null,\"WageGrpRsltUpd2\":null,\"WageGrpRsltUpd3\":null,\"WageGrpRsltUpd4\":null,\"WageGrpRsltUpd5\":null,\"WageCodeRsltUpd1\":null,\"WageCodeRsltUpd2\":null,\"WageCodeRsltUpd3\":null,\"WageCodeRsltUpd4\":null,\"WageCodeRsltUpd5\":null,\"OrgCodeUpdate1\":null,\"OrgCodeUpdate2\":null,\"OrgCodeUpdate3\":null,\"OrgCodeUpdate4\":null,\"OrgCodeUpdate5\":null,\"ProcStatusUpdate1\":null,\"ProcStatusUpdate2\":null,\"ProcStatusUpdate3\":null,\"ProcStatusUpdate4\":null,\"ProcStatusUpdate5\":null,\"RowProtectionUpdate1\":false,\"RowProtectionUpdate2\":false,\"RowProtectionUpdate3\":false,\"RowProtectionUpdate4\":false,\"RowProtectionUpdate5\":false,\"WageHours\":\"8\",\"RowProtection\":false,\"ResRowProtection\":false,\"ProcStatus\":\"IncrementsIncluded\",\"ShortName\":\"600NC0137.ADM.NCADM_100\",\"ReportCostCode\":\"TIMENB\",\"PurchaseOrderNo\":null,\"PurchaseOrderLine\":null,\"ResourceId\":\"492614\",\"PriceAdjustmentId\":null,\"CustomerCompanyId\":null,\"CustomerActShortName\":null,\"CustomerActReportCode\":null,\"Contract\":null,\"WorkOrder\":null,\"WorkTask\":null,\"MaintOrg\":null,\"CraftId\":null,\"WoTimeType\":null,\"PlanLineNo\":null,\"IndirectJob\":null,\"Operation\":null,\"TimeType\":null,\"DayHours\":\"8\",\"InternalComments\":null,\"InvoiceComments\":null,\"AddShortcut\":false,\"OrderNo\":null,\"ReleaseNo\":null,\"SequenceNo\":null,\"OperationNo\":null,\"TeamId\":null,\"ClockingNoteText\":null,\"WorkCenterNo\":null,\"ResourceShare\":null,\"CrewSize\":null,\"SetupCrewSize\":null,\"TimmanTimeBase\":\"1\",\"JobTransactionParams\":{},\"ShortcutName\":null,\"CTaskId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://af-erp-test.ifs.cloud:48080/main/ifsapplications/projection/v1/TimeRegistrationEmployeeHandling.svc/ReportTimeWithIntervals",
+					"protocol": "https",
+					"host": [
+						"af-erp-test",
+						"ifs",
+						"cloud"
+					],
+					"port": "48080",
+					"path": [
+						"main",
+						"ifsapplications",
+						"projection",
+						"v1",
+						"TimeRegistrationEmployeeHandling.svc",
+						"ReportTimeWithIntervals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CompanyId\":\"600\",\"EmpNo\":\"492614\",\"StartDate\":\"2021-05-31\",\"EndDate\":\"2021-06-06\",\"CheckPhcDays\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://af-erp-test.ifs.cloud:48080/main/ifsapplications/projection/v1/TimeRegistrationEmployeeHandling.svc/DoConfirm",
+					"protocol": "https",
+					"host": [
+						"af-erp-test",
+						"ifs",
+						"cloud"
+					],
+					"port": "48080",
+					"path": [
+						"main",
+						"ifsapplications",
+						"projection",
+						"v1",
+						"TimeRegistrationEmployeeHandling.svc",
+						"DoConfirm"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
