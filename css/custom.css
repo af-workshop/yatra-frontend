@@ -4,3 +4,11 @@
     margin-bottom: 50px;
     text-alignment: center;
 }
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
